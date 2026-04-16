@@ -25,12 +25,8 @@ To-Do-List-App/
 │── script.js
 ```
 
-## 📸 Preview
-
-Add screenshot here if available.
-
 ## 🔗 Live Demo
-
+ https://soni-frontend.github.io/To-Do-List-App/
 .
 
 ## 📌 How to Use
@@ -38,7 +34,7 @@ Add screenshot here if available.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/soni-frontend/To-Do-List-App
+git clone https://github.com/soni-frontend/To-Do-List-App/
 ```
 
 2. Open `index.html` in your browser.
