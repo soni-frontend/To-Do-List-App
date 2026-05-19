@@ -30,8 +30,3 @@ git clone [https://github.com/soni-frontend/To-Do-List-App.git](https://github.c
 Created by: Soni Kumari
 Role: Aspiring Frontend Developer
 Purpose: Final Semester BCA College Project Submission
-
-
-Role: Aspiring Frontend Developer
-
-Purpose: Final Semester BCA College Project Submission
