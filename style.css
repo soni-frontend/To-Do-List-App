@@ -1,22 +1,138 @@
-body{
-    font-family: Arial;
+/* 1. Global Reset & Cyber Theme */
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --cyber-cyan: #06b6d4;
+    --cyber-purple: #a855f7;
+    --cyber-green: #10b981;
+    --danger-light-bg: rgba(239, 68, 68, 0.15);
+    --danger-light-text: #f87171;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 2. Container (Glassmorphism) */
+.todo-container, #todo-box, .container {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 35px 30px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 50px rgba(6, 182, 212, 0.15);
+    width: 100%;
+    max-width: 480px;
+}
+
+h1 {
+    font-size: 2rem;
     text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--cyber-cyan), var(--cyber-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.container{
-    margin-top: 50px;
+/* 3. Input Section with Large Buttons */
+.input-section, .input-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
 }
 
-input{
-    padding: 10px;
-    width: 200px;
+input[type="text"], #task-input, .todo-input {
+    flex: 1;
+    background: rgba(15, 23, 42, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 14px 16px;
+    border-radius: 10px;
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-button{
-    padding: 10px;
-    margin-left: 5px;
+input[type="text"]:focus {
+    border-color: var(--cyber-cyan);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
 }
 
-li{
-    margin: 10px;
+/* BIG ADD BUTTON */
+#add-btn, .add-button, button#add-btn {
+    background: linear-gradient(135deg, var(--cyber-cyan) 0%, #0891b2 100%) !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 14px 28px !important; /* हाइट और विड्थ बढ़ाने के लिए */
+    border-radius: 10px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+#add-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* 4. List Items with Spacing */
+#task-list, .task-list, ul {
+    list-style: none;
+}
+
+#task-list li, .task-list li, ul li {
+    background: rgba(15, 23, 42, 0.4);
+    border-left: 4px solid var(--cyber-purple);
+    padding: 16px 20px !important; /* अंदर की स्पेसिंग */
+    border-radius: 8px;
+    margin-bottom: 16px !important; /* हर टास्क के बीच की दूरी */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 5. LIGHT RED DELETE BUTTON (Har condition ke liye) */
+.delete-btn, button.delete, .delete-button, #task-list button {
+    background: var(--danger-light-bg) !important;
+    color: var(--danger-light-text) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+    padding: 8px 14px !important; /* साइज बड़ा किया */
+    border-radius: 6px !important;
+    transition: all 0.2s ease;
+}
+
+.delete-btn:hover, button.delete:hover, #task-list button:hover {
+    background: rgba(239, 68, 68, 0.3) !important;
+    color: #ef4444 !important;
+}
+
+.completed {
+    border-left-color: var(--cyber-green) !important;
+    opacity: 0.5;
+}
+.completed span, .completed p {
+    text-decoration: line-through;
 }
