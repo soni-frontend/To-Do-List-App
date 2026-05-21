@@ -76,3 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderTasks();
 });
+
+// EXAMINER DEMO: Insecure output dikhane ke liye chhota function
+function showInsecureDemo() {
+    alert("Insecure innerHTML test chal raha hai...");
+    document.body.innerHTML += `<div style='display:none'><img src='x' onerror='alert("Warning: Hacker successfully hacked the app using XSS vulnerability!")'></div>`;
+}
